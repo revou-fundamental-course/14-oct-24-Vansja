@@ -1,0 +1,5 @@
+.main_header {
+display: : flex;
+justift-content : space-between;
+align-item: center;
+}
