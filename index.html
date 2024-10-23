@@ -4,29 +4,309 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style> 
+        .myslide {
+            display: none;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 600px; 
+            margin: auto;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+
 </head>
+
 <body>
+    
+    
 <header class="main-header">
     <div></div>
-
+            <!--tombol-navigasi-->
     <nav>
-        <a href="section-home">Home</a>
-        <a href="section-us">About us</a>
-        <a href="section-news">News</a>
-        <a href="section-contact">Contact</a>
+        <a href="#section-home">Home</a>
+        <a href="#section-me">About me</a>
+        <a href="#section-portofolio">Portofolio</a>
+        <a href="#section-contact">Contact</a>
 
     </nav>
 
+    <!--<div class="logo-container"> 
+        <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" alt="logo" class="logo">
+    </div>-->
+
 </header>
-    <hr> 
+    <br> 
 
     <main>
 
         <section id="section-home"></section>
        <header>
-        <h1>Halo user selamat datang </h1>
+        <main>
+            <h1 id="welcome-message">Halo <span id="user-name" style="color: blue; cursor: pointer;">user</span>, selamat datang!</h1>
+            <h5>Klik nama untuk mengganti nama baru</h5>
+       
+        </main>
        </header>
     </main>
+    <hr>
 
+
+    <!----konten---->
+    <main>
+
+        <section id="section-home">
+             <header>
+                <h1>Home</h1>
+             </header>
+
+             <article>
+                <p>Alam adalah keindahan yang tiada tara, menawarkan pemandangan menakjubkan dari gunung yang menjulang tinggi hingga lautan yang luas. Setiap sudutnya menyimpan keajaiban, dari hutan rimbun yang dipenuhi berbagai spesies flora dan fauna, hingga padang rumput yang menghijau. Keanekaragaman ini bukan hanya memberi kehidupan bagi makhluk hidup, tetapi juga memberikan ketenangan dan kedamaian bagi manusia. Dengan menikmati keindahan alam, kita dapat merasakan koneksi yang dalam dengan lingkungan sekitar dan memahami pentingnya menjaga kelestariannya.
+                </p>
+                <br>
+                <p>Namun, alam juga menghadapi berbagai tantangan akibat aktivitas manusia, seperti deforestasi, pencemaran, dan perubahan iklim. Kerusakan yang terjadi dapat mengancam ekosistem dan keberlangsungan hidup spesies yang ada. Oleh karena itu, penting bagi kita untuk menjaga dan melestarikan alam dengan cara yang berkelanjutan. Melalui edukasi dan kesadaran kolektif, kita dapat berkontribusi dalam usaha pelestarian lingkungan, sehingga generasi mendatang juga dapat menikmati keindahan dan keanekaragaman alam yang telah ada sejak zaman dahulu.
+                </p>
+             </article>
+        </section>
+
+    </main>
+    <hr>
+
+    <div class="banner" id="slideshow-banner">
+    <div class="overlay">Silahkan menjelajahi website saya</div>
+</div>
+
+
+
+
+    <!--slideshow-tombol-->
+   <!---- <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/29904/ingame_4k.png" style="width: 100%;" alt="slide-1">
+        </div> 
+
+        <div class="mySlides">
+            <img src="https://wallpapers-clan.com/wp-content/uploads/2024/08/kirby-rainbow-sea-background-desktop-wallpaper-cover.jpg" style="width: 100%;" alt="slide-2">
+        </div>
+        <div class="mySlides">
+            <img src="https://images6.alphacoders.com/121/1216258.jpg" style="width: 100%" alt="slide-3">
+        </div>
+        <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
+        <a class="next" onclick="plusDivs(1)">&#10095;</a>
+    </div>-->
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+    
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+    
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = x.length; }
+            
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex - 1].style.display = "block";  
+        }
+    </script>
+
+<!--<div class="banner">
+    <img id="banner-image" src="https://picsum.photos/200/300?1" alt="banner-web">
+</div>
+        <script>let bannerImages = [
+            'https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/29904/ingame_4k.png',
+            'ttps://picsum.photos/200/300',
+            'https://images6.alphacoders.com/121/1216258.jpg'
+        ];
+    
+        let currentIndex = 0;
+        let bannerImageElement = document.getElementById('banner-image');
+    
+        function changeBannerImage() {
+            currentIndex = (currentIndex + 1) % bannerImages.length; // Loop melalui gambar
+            bannerImageElement.src = bannerImages[currentIndex]; // Mengubah src gambar
+        }
+    
+    
+        setInterval(changeBannerImage, 5000);
+        </script>-->
+    
+        <main>
+        <section id="section-me">
+             <header>
+                <h1>About me</h1>
+             </header>
+        </section>
+
+    </main>
+    <hr>
+
+    <main>
+        <section id="section-portofolio">
+             <header>
+                <h1>Portofolio</h1>
+             </header>
+        </section>
+
+    </main>
+    <hr>
+
+    <main>
+        <section id="section-contact">
+             <header>
+                <h1>Contact</h1>
+             </header>
+        </section>
+
+    </main>
+
+    <div class="message-container" style="display: flex; flex-direction: column; align-items: center;">
+    <form id="form-isi" style="display: flex; flex-direction: column; align-items: center;">
+    <div class="message-container">
+        <form id="form-isi">
+        <label for="nama"><b>Masukan Nama : </b></label>
+        <input type="text" id="nama" name="nama" placeholder="nama anda">
+        <div class="bubble">Nama harus diisi!!</div>
+        
+    </div>
+  
+
+    <div class="message-container">
+        <label for="tangga-lahir"><b>Tanggal Lahir : </b></label>
+        <input type="date" id="tanggal" name="tanggal-lahir">
+        <div class="bubble">Tanggal harus diisi!!</div>
+    </div>
+    
+   
+    <!-- Bagian Jenis Kelamin -->
+    <div style="margin-bottom: 15px; text-align: center;">
+        <label><b>Jenis Kelamin</b> :</label>
+        <div style="display: inline-flex; justify-content: center; margin-top: 5px;">
+            <label for="Pria" style="margin-right: 10px;">Pria</label>
+            <input type="radio" id="Pria" name="jenis-kelamin" value="pria" style="margin-right: 10px;">
+            <label for="Wanita" style="margin-right: 10px;">Wanita</label>
+            <input type="radio" id="Wanita" name="jenis-kelamin" value="wanita">
+        </div>
+    </div>
+
+        
+
+        <!-- Bagian Kotak Pesan -->
+      <div class="comment-box" style="margin-top: 20px;">
+            <h2>Kotak Pesan</h2>
+            <textarea name="message" id="message" rows="5" placeholder="Tulis pesan kamu..." style="width: 100%;"></textarea>
+       <br>
+
+       <button type="submit">Kirim</button>
+        </form>
+    </div>
+
+<br>
+
+</div>
+ 
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/29904/ingame_4k.png" style="width: 100%;" alt="slide-1">
+    </div> 
+
+    <div class="mySlides">
+        <img src="https://wallpapers-clan.com/wp-content/uploads/2024/08/kirby-rainbow-sea-background-desktop-wallpaper-cover.jpg" style="width: 100%;" alt="slide-2">
+    </div>
+    <div class="mySlides">
+        <img src="https://images6.alphacoders.com/121/1216258.jpg" style="width: 100%" alt="slide-3">
+    </div>
+    <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
+    <a class="next" onclick="plusDivs(1)">&#10095;</a>
+</div>
+<br>
+
+<footer>RevoU Fundemtal Course - made by Vansja 2024</footer>
+
+
+<button class="scroll-to-top" id="scrollToTopBtn">↑ Kembali ke Atas</button>
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = x.length; }
+        
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex - 1].style.display = "block";  
+    }
+</script>
+
+    <script src="js/script.js"></script>
+    <script>
+         document.getElementById('form-isi').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            
+            let namaInput = document.getElementById('nama');
+            let namaBubble = namaInput.nextElementSibling; 
+
+            let tanggalInput = document.getElementById('tanggal');
+            let tanggalBubble = tanggalInput.nextElementSibling; 
+
+            
+            if (namaInput.value.trim() === "") {
+                namaInput.classList.add('error');
+                namaBubble.style.display = 'block'; 
+            } else {
+                namaInput.classList.remove('error');
+                namaBubble.style.display = 'none'; 
+            }
+
+            
+            if (tanggalInput.value.trim() === "") {
+                tanggalInput.classList.add('error');
+                tanggalBubble.style.display = 'block'; 
+            } else {
+                tanggalInput.classList.remove('error');
+                tanggalBubble.style.display = 'none'; 
+            }
+        });
+
+</script>
 </body>
 </html>
