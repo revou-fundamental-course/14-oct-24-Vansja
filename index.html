@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--css dkk-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" hreflang="css/game.css">
     <style> 
         .mySlides {
             display: none;
@@ -35,6 +37,9 @@
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        
+
     </style>
 
 </head>
@@ -44,23 +49,23 @@
     
 <header class="main-header">
             <!--tombol-navigasi-->
-    <nav>
+    <nav style="margin-left: auto;">
         <a href="#section-home">Home</a>
         <a href="#section-me">About me</a>
-        <a href="#section-portofolio">Portofolio</a>
+        <a href="#section-fitur">Fitur</a>
         <a href="#section-contact">Contact</a>
 
     </nav>
 
-    <div class="logo-container"> 
-        <img src="" alt="logo" class="logo" width="50px" height="auto">
+    <div class="logo-container" style="margin-left: 10px;" > 
+        <img src="logoku2.jpg" alt="logo" class="logo" width="50px" height="auto" >
     </div>
 
 </header>
     <hr> 
 
     <main>
-
+                <!--sambutan-->
         <section id="section-home"></section>
        <header>
         <main>
@@ -82,17 +87,20 @@
              </header>
 
              <article>
-                <p>Alam adalah keindahan yang tiada tara, menawarkan pemandangan menakjubkan dari gunung yang menjulang tinggi hingga lautan yang luas. Setiap sudutnya menyimpan keajaiban, dari hutan rimbun yang dipenuhi berbagai spesies flora dan fauna, hingga padang rumput yang menghijau. Keanekaragaman ini bukan hanya memberi kehidupan bagi makhluk hidup, tetapi juga memberikan ketenangan dan kedamaian bagi manusia. Dengan menikmati keindahan alam, kita dapat merasakan koneksi yang dalam dengan lingkungan sekitar dan memahami pentingnya menjaga kelestariannya.
+                <p>Kerja keras adalah salah satu kunci utama untuk mencapai kesuksesan dalam hidup. Tidak ada yang dapat menggantikan dedikasi dan usaha yang konsisten dalam mengejar tujuan. Ketika seseorang berkomitmen untuk bekerja keras, mereka tidak hanya meningkatkan keterampilan dan pengetahuan mereka, tetapi juga membangun karakter yang kuat. Proses ini seringkali penuh tantangan, tetapi setiap rintangan yang dihadapi adalah kesempatan untuk belajar dan berkembang.
                 </p>
                 <br>
-                <p>Namun, alam juga menghadapi berbagai tantangan akibat aktivitas manusia, seperti deforestasi, pencemaran, dan perubahan iklim. Kerusakan yang terjadi dapat mengancam ekosistem dan keberlangsungan hidup spesies yang ada. Oleh karena itu, penting bagi kita untuk menjaga dan melestarikan alam dengan cara yang berkelanjutan. Melalui edukasi dan kesadaran kolektif, kita dapat berkontribusi dalam usaha pelestarian lingkungan, sehingga generasi mendatang juga dapat menikmati keindahan dan keanekaragaman alam yang telah ada sejak zaman dahulu.
+                <p>Di dunia yang kompetitif saat ini, kerja keras menjadi semakin penting. Banyak orang yang memiliki bakat dan potensi, tetapi tanpa usaha yang sungguh-sungguh, mereka mungkin tidak akan pernah mencapai puncak kemampuan mereka. Kerja keras juga menciptakan peluang yang mungkin tidak terlihat sebelumnya. Dengan berusaha lebih keras, seseorang dapat membuka pintu menuju pengalaman baru, jaringan profesional, dan pencapaian yang dapat mengubah hidup mereka.
+                </p>
+                <br>
+                <p>Selain itu, kerja keras sering kali menginspirasi orang lain di sekitar kita. Ketika kita melihat seseorang yang berjuang dan tidak menyerah, itu dapat memotivasi kita untuk melakukan hal yang sama. Lingkungan yang positif dan penuh semangat kerja keras dapat menciptakan budaya kolaborasi dan inovasi. Dengan demikian, kerja keras bukan hanya tentang pencapaian individu, tetapi juga tentang memberi dampak positif bagi orang lain dan komunitas secara keseluruhan.
                 </p>
              </article>
         </section>
 
     </main>
     <hr>
-
+            <!--banner berjalan -->
     <div class="banner" id="slideshow-banner">
     <div class="overlay">Silahkan menjelajahi website saya</div>
     </div>
@@ -118,27 +126,37 @@
             x[slideIndex - 1].style.display = "block";  
         }
     </script>
-    
+
+                <!---about me-->
         <main>
         <section id="section-me">
              <header>
                 <h1>About me</h1>
+                <p>Halo, nama saya Vannesss Jason, dan ini adalah website sederhana yang saya buat. Selamat! Saya belajar di RevoU Fundamental Course dengan nol pengalaman dalam dunia coding, tapi saya sangat senang belajar hal-hal baru yang sangat menyenangkan.</p>
              </header>
         </section>
 
     </main>
     <hr>
+    <br>
 
+
+     <!--fitur-->
     <main>
-        <section id="section-portofolio">
-             <header>
-                <h1>Portofolio</h1>
-             </header>
+        <section id="section-fitur">
+            <h1>fitur</h1>
+            <p>Fitur.</p>
+            <div class="game-button-container">
+                <button id="start-button">Main Game Lompat Dino</button>
+                <canvas id="dino-game" width="1300" height="200" style="border: 1px solid black; display: none;"></canvas>
+            </div>
         </section>
-
     </main>
     <hr>
 
+    </main>
+    <hr>
+        <!--kontak-->
     <main>
         <section id="section-contact">
              <header>
@@ -147,7 +165,9 @@
         </section>
 
     </main>
+ 
 
+            <!---kotak nama-->
     <div class="form-container">
         <div style="margin-bottom: 15px; text-align: center;"
     <div class="message-container" style="display: flex; flex-direction: column; align-items: center;">
@@ -156,7 +176,7 @@
         <form id="form-isi">
         <label for="nama"><b>Masukan Nama : </b></label>
         <input type="text" id="nama" name="nama" placeholder="nama anda">
-        <div class="bubble">Nama harus diisi!!</div>
+        <div class="bubble">Mohon isi nama anda!!</div>
         
     </div>
     <br>
@@ -165,7 +185,7 @@
     <div class="message-container">
         <label for="tangga-lahir"><b>Tanggal Lahir : </b></label>
         <input type="date" id="tanggal" name="tanggal-lahir">
-        <div class="bubble">Tanggal harus diisi!!</div>
+        <div class="bubble">ohon isi tanggal!!</div>
     </div>
     
    
@@ -187,9 +207,10 @@
       <div class="comment-box" style="margin-top: 20px;">
             <h2>Kotak Pesan</h2>
             <textarea name="message" id="message" rows="5" placeholder="Tulis pesan kamu..." style="width: 100%;"></textarea>
-            <div class="bubble">tolong diisi!!</div>
+            <div class="bubble">tolong pesan anda!!</div>
        <br>
 
+       <!--tombol kirim-->
        <button type="submit">Kirim</button>
         </form>
     </div>
@@ -198,8 +219,9 @@
 
 </div>
 
+    <!--data yang isi-->
 <div class="hasil">
-    <p>OUTPUT</p>
+    <p>Hasil</p>
     <p>Nama : <span id="sender-nama"></span></p>
     <p>Tanggal Lahir : <span id="sender-tanggal-lahir"></span></p>
     <p>Jenis Kelamin : <span id="sender-jenis-kelamin"></span></p>
@@ -223,7 +245,7 @@
 </div>
 <br>
 
-
+  <!---footer-->
 <footer style="
     text-align: center;
     /* margin-right: auto; */
@@ -232,9 +254,10 @@
     /* align-items: flex-end; */
 ">RevoU Fundamental Course - made by Vansja 2024</footer>
 
+     <!--tombol keatas-->
 <button class="scroll-to-top" id="scrollToTopBtn">↑ Kembali ke Atas</button>
 
-
+<!-- java script-->
 <script>
     var slideIndex = 1;
     showDivs(slideIndex);
@@ -257,6 +280,7 @@
 </script>
 
     <script src="js/script.js"></script>
+    <script src="js/game.js"></script>
     <script>
          document.getElementById('form-isi').addEventListener('submit', function(event) {
             event.preventDefault(); 
@@ -290,3 +314,6 @@
 </script>
 </body>
 </html>
+
+
+<!--maaf jika berantakan-->

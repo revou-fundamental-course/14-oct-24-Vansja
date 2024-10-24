@@ -1,6 +1,6 @@
 // js/script.js
 
-// Ketika halaman selesai dimuat
+// sambutan nama
 window.onload = function() {
     var userName = prompt("Masukkan nama Anda:");
     if (userName) {
@@ -27,7 +27,7 @@ function updateWelcomeMessage(userName) {
     document.getElementById('page-title').textContent = `Halo ${userName}, selamat datang!`;
 }
 
-// Fungsi validasi form
+
 // Fungsi validasi form
 function validateForm(event) {
     event.preventDefault(); // Mencegah form dikirim secara otomatis
@@ -45,6 +45,7 @@ function validateForm(event) {
     if (namaInput.value.trim() === "") {
         namaInput.classList.add("invalid"); // Tambahkan kelas invalid
         isValid = false;
+        namaInput.focus();
     } else {
         namaInput.classList.remove("invalid"); // Hapus kelas invalid jika valid
     }
@@ -53,11 +54,12 @@ function validateForm(event) {
     if (tanggalInput.value.trim() === "") {
         tanggalInput.classList.add("invalid"); // Tambahkan kelas invalid
         isValid = false;
+        tanggalInput.focus();
     } else {
         tanggalInput.classList.remove("invalid"); // Hapus kelas invalid jika valid
     }
 
-    // Validasi Gender (dropdown harus dipilih selain opsi default)
+    // Validasi Gender (tidak terbaca)
     if (genderInput.value === "Pilih") {
         genderInput.classList.add("invalid"); // Tambahkan kelas invalid ke dropdown
         isValid = false;
@@ -146,3 +148,5 @@ function showDivs(n) {
     }
     x[slideIndex - 1].style.display = "block";  
 }
+
+

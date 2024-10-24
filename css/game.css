@@ -1,0 +1,20 @@
+
+/* css untuk mengatur game dino lompat
+/* Tambahkan gaya ini untuk menempatkan tombol di tengah */
+#section-fitur {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memusatkan konten di sumbu horizontal */
+    text-align: center; /* Memusatkan teks di dalam section */
+}
+
+.game-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+#dino-game {
+    display: none; 
+}
