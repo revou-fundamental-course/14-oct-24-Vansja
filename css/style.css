@@ -9,12 +9,20 @@
     justify-content: space-between;
     align-items: center; 
     padding: 10px; 
-    background-color: #f0f0f0; 
+    background-color: #000000; 
     }
+    
 
 nav {
     margin-left: auto; 
 }
+
+nav a {
+    margin-left: 20px; 
+    padding: 8px; 
+    text-decoration: none; 
+}
+
 
 nav a {
     margin-left: 20px; 
@@ -34,17 +42,6 @@ nav > a:hover {
 .error {
     border: 2px solid red;
 }
-
-.bubble {
-    display: none; /* Bubble tersembunyi secara default */
-    background-color: #f8d7da; /* Warna latar belakang merah muda */
-    color: #721c24; /* Warna teks merah gelap */
-    border: 1px solid #f5c6cb; /* Border merah */
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-}
-
 
 .banner {
     background-color: #f2f2f2;
@@ -96,15 +93,6 @@ nav > a:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
 
-
-    label {
-        margin-right: 8px; /* Jarak antara label dan input */
-    }
-    
-    input[type="radio"] {
-        margin-right: 10px; /* Jarak antara radio button */
-    }
-
     .bubble {
         display: none;
         color: red;
@@ -120,11 +108,12 @@ nav > a:hover {
         padding: 10px; 
         border: 1px solid #ccc; 
     }
-    
+
     .comment-box {
         display: block; 
         margin-top: 20px; 
     }
+
 
     .banner {
         position: relative;
@@ -140,7 +129,7 @@ nav > a:hover {
         to { opacity: 1; }
     }
 
-    
+
     * {
         margin: 0; 
         padding: 0; 
@@ -154,6 +143,7 @@ nav > a:hover {
         overflow: hidden; /* Menyembunyikan gambar yang keluar dari area */
     }
     
+
     .bg-image {
         position: absolute;
         top: 0;
@@ -169,7 +159,7 @@ nav > a:hover {
     .bg-image.active {
         opacity: 1; /* Hanya gambar aktif yang terlihat */
     }
-    
+
     .overlay {
         position: absolute;
         top: 0;
@@ -190,147 +180,14 @@ nav > a:hover {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks untuk kontras */
     }
     
-
     #slideshow-banner {
         background-size: cover; /* Agar gambar menutupi seluruh elemen */
         transition: background-image 1s ease-in-out; /* Transisi halus selama 1 detik */
     }
-    
-    .main-header {
-        display: flex; /* Use flexbox for layout */
-        justify-content: space-between; /* Space between nav and logo */
-        align-items: center; /* Center items vertically */
-        padding: 10px; /* Add padding for aesthetics */
-    }
-    
-    .main-header {
-        display: flex; 
-        justify-content: flex-start; /* Memastikan item diatur ke kiri */
-        align-items: center; 
-        padding: 10px; 
-        background-color: #f0f0f0; 
-    }
-    
-    .logo-container {
-        margin-right: 100px; /* Memberikan jarak antara logo dan navigasi */
-    }
-    
-    nav {
-        display: flex; /* Mengatur nav sebagai flex container */
-        margin-left: auto; /* Memindahkan navigasi ke kanan */
-    }
-    
-    nav a {
-        margin-left: 20px; 
-        padding: 8px; 
-        text-decoration: none; 
-    }
-    
-    
-    
-    
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-    
-    .myslide {
-        display: none;
-    }
-    
-    .slideshow-container {
-        position: relative;
-        max-width: 100%; /* Menyesuaikan lebar dengan layar */
-        margin: auto;
-    }
-    
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-    }
-    
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
-    
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    
-    /* Responsive styles */
-    @media screen and (max-width: 600px) {
-        .prev, .next {
-            font-size: 14px; /* Ukuran teks lebih kecil di layar kecil */
-            padding: 10px; /* Padding lebih kecil */
-        }
-        h1 {
-            font-size: 24px; /* Ukuran teks lebih kecil */
-        }
-    }
-    
-    /* Navigasi responsif */
-    nav {
-        display: flex;
-        flex-wrap: wrap; /* Mengizinkan item untuk membungkus */
-        justify-content: center; /* Mengatur posisi navigasi di tengah */
-    }
-    
-    nav a {
-        padding: 10px 15px;
-        text-decoration: none;
-        color: black;
-        border: 1px solid #ccc;
-        margin: 5px;
-    }
-    
-    nav a:hover {
-        background-color: #ddd; /* Efek hover */
-    }
-    
-    /* Gaya untuk banner */
-    .banner {
-        position: relative;
-        overflow: hidden;
-        width: 100%; /* Menyesuaikan lebar dengan layar */
-        height: 300px; /* Atur tinggi sesuai kebutuhan */
-    }
-    
-    .banner .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px; /* Ukuran teks overlay */
-    }
-    
-    /* Gaya untuk form */
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%; /* Menyesuaikan lebar */
-        max-width: 400px; /* Lebar maksimal */
-        margin: auto;
-    }
-    
-    /* Responsif textarea */
-    textarea {
+
+
+     /* Responsif textarea */
+     textarea {
         width: 100%; /* Menyesuaikan lebar */
         box-sizing: border-box; /* Menghitung padding dan border dalam lebar */
     }
@@ -350,7 +207,6 @@ nav > a:hover {
         background-color: darkblue; /* Mengubah warna latar belakang saat hover */
     }
 
-    
     .scroll-to-top {
         position: fixed;
         bottom: 20px;
@@ -366,4 +222,54 @@ nav > a:hover {
     
     .scroll-to-top:hover {
         background-color: #0056b3;
+    }
+
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 400px;
+        background-color: #f9f9f9;
+    }
+    
+    .message-container,
+    .form-gender,
+    .comment-box {
+        width: 100%; /* Agar elemen input mengikuti lebar form */
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .hasil {
+        border: 2px solid black; /* Menambahkan border */
+        padding: 20px;           /* Memberikan ruang di dalam border */
+        margin: 20px auto;       /* Membuat margin di luar output */
+        max-width: 400px;        /* Menentukan lebar maksimum agar sesuai dengan form */
+        background-color: #f1f1f1; /* Memberikan warna latar belakang ringan */
+        border-radius: 8px;      /* Membuat sudut border melengkung */
     }

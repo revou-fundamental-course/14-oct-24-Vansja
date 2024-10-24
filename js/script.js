@@ -1,5 +1,7 @@
+// js/script.js
+
+// Ketika halaman selesai dimuat
 window.onload = function() {
-    // Meminta nama pengguna
     var userName = prompt("Masukkan nama Anda:");
     if (userName) {
         updateWelcomeMessage(userName);
@@ -8,11 +10,13 @@ window.onload = function() {
     changeBackgroundImage(); 
 };
 
+// Fungsi untuk mengubah pesan selamat datang
 function updateWelcomeMessage(userName) {
     const userNameElement = document.getElementById('user-name');
     userNameElement.textContent = userName; 
     userNameElement.style.color = "blue"; 
     userNameElement.style.cursor = "pointer"; 
+
     userNameElement.onclick = function() {
         var newName = prompt("Masukkan nama baru Anda:");
         if (newName) {
@@ -23,79 +27,107 @@ function updateWelcomeMessage(userName) {
     document.getElementById('page-title').textContent = `Halo ${userName}, selamat datang!`;
 }
 
+// Fungsi validasi form
+// Fungsi validasi form
 function validateForm(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Mencegah form dikirim secara otomatis
 
+    // Ambil elemen input
     var namaInput = document.getElementById("nama");
     var tanggalInput = document.getElementById("tanggal");
-    var namaBubble = namaInput.nextElementSibling; 
-    var tanggalBubble = tanggalInput.nextElementSibling;
+    var genderInput = document.getElementById("jenis-kelamin"); // Dropdown untuk gender
+    var messageInput = document.getElementById("message");
 
-    let isValid = true; 
-    
+    // Inisialisasi status validasi
+    let isValid = true;
+
     // Validasi Nama
     if (namaInput.value.trim() === "") {
-        namaInput.classList.add("invalid"); 
-        namaBubble.style.display = "block"; 
+        namaInput.classList.add("invalid"); // Tambahkan kelas invalid
         isValid = false;
-        namaInput.focus(); // Fokus pada input nama
     } else {
-        namaInput.classList.remove("invalid"); 
-        namaBubble.style.display = "none"; 
+        namaInput.classList.remove("invalid"); // Hapus kelas invalid jika valid
     }
 
     // Validasi Tanggal
     if (tanggalInput.value.trim() === "") {
-        tanggalInput.classList.add("invalid"); 
-        tanggalBubble.style.display = "block"; 
+        tanggalInput.classList.add("invalid"); // Tambahkan kelas invalid
         isValid = false;
-        if (isValid) {
-            tanggalInput.focus(); // Fokus pada input tanggal
-        }
     } else {
-        tanggalInput.classList.remove("invalid"); 
-        tanggalBubble.style.display = "none"; 
+        tanggalInput.classList.remove("invalid"); // Hapus kelas invalid jika valid
     }
 
-    // Jika valid, tampilkan alert dan reset form
+    // Validasi Gender (dropdown harus dipilih selain opsi default)
+    if (genderInput.value === "Pilih") {
+        genderInput.classList.add("invalid"); // Tambahkan kelas invalid ke dropdown
+        isValid = false;
+    } else {
+        genderInput.classList.remove("invalid"); // Hapus kelas invalid jika valid
+    }
+
+    // Validasi Pesan
+    if (messageInput.value.trim() === "") {
+        messageInput.classList.add("invalid"); // Tambahkan kelas invalid ke textarea
+        isValid = false;
+    } else {
+        messageInput.classList.remove("invalid"); // Hapus kelas invalid jika valid
+    }
+
+    // Jika validasi berhasil, tampilkan pesan
     if (isValid) {
-        alert("Nama berhasil dikirim: " + namaInput.value + "\nTanggal Lahir: " + tanggalInput.value);
+        setMessage(namaInput.value, tanggalInput.value, genderInput.value, messageInput.value);
+        alert("Form berhasil dikirim!");
+
+        // Reset form
         document.getElementById("form-isi").reset();
-        namaBubble.style.display = "none"; 
-        tanggalBubble.style.display = "none"; 
     }
 }
 
-// Event listeners untuk form
-document.getElementById('form-isi').addEventListener('submit', validateForm);
-document.getElementById('nama').addEventListener('input', function() {
-    this.classList.remove('invalid');
-    this.nextElementSibling.style.display = 'none';
-});
-document.getElementById('tanggal').addEventListener('input', function() {
-    this.classList.remove('invalid');
-    this.nextElementSibling.style.display = 'none';
-});
+// Function to set displayed messages
+function setMessage(name, birthDate, gender, message) {
+    document.getElementById("sender-nama").innerHTML = name;
+    document.getElementById("sender-tanggal-lahir").innerHTML = birthDate;
+    document.getElementById("sender-jenis-kelamin").innerHTML = gender;
+    document.getElementById("sender-message").innerHTML = message;
+}
 
-// Array URL gambar untuk slideshow background
+// Tambahkan event listener pada form
+document.getElementById('form-isi').addEventListener('submit', validateForm);
+
+// Slideshow functionality
 const images = [
-    'https://png.pngtree.com/thumb_back/fh260/background/20230416/pngtree-building-looking-up-at-the-background-of-high-rise-buildings-image_2394729.jpg',
-    'https://media.istockphoto.com/id/511061090/id/foto/gedung-kantor-bisnis-di-london-inggris.jpg?b=1&s=612x612&w=0&k=20&c=FSjmeAkmZpXFg4BLfdTYLfxkMm5kqIW-HuwIpsauTL0=',
+    'https://wallpapers.com/images/featured/skyscraper-8scefc1q0icwddbz.jpg',
+    'https://cdn.wallpapersafari.com/67/51/e4vsLG.jpg',
     'https://statics.indozone.news/local/62aed57ed4f16.jpg'
 ];
 
 let currentImageIndex = 0;
 const bannerElement = document.getElementById('slideshow-banner');
 
-// Fungsi untuk mengganti gambar background
+// Change background image
 function changeBackgroundImage() {
     bannerElement.style.backgroundImage = `url(${images[currentImageIndex]})`;
     currentImageIndex = (currentImageIndex + 1) % images.length;
 }
 
-// Mengganti gambar setiap 3 detik
+// Change image every 3 seconds
 setInterval(changeBackgroundImage, 3000);
 
+// Scroll to top button functionality
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block"; 
+    } else {
+        scrollToTopBtn.style.display = "none"; 
+    }
+};
+
+scrollToTopBtn.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'}); 
+};
+
+// Slideshow navigation functions
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -114,18 +146,3 @@ function showDivs(n) {
     }
     x[slideIndex - 1].style.display = "block";  
 }
-
-
-
-var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block"; // Tampilkan tombol saat di-scroll ke bawah
-    } else {
-        scrollToTopBtn.style.display = "none"; // Sembunyikan tombol saat di atas
-    }
-};
-
-scrollToTopBtn.onclick = function() {
-    window.scrollTo({top: 0, behavior: 'smooth'}); // Scroll ke atas dengan efek halus
-};

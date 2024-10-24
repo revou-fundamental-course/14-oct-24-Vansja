@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <style> 
-        .myslide {
+        .mySlides {
             display: none;
         }
 
@@ -43,7 +43,6 @@
     
     
 <header class="main-header">
-    <div></div>
             <!--tombol-navigasi-->
     <nav>
         <a href="#section-home">Home</a>
@@ -53,12 +52,12 @@
 
     </nav>
 
-    <!--<div class="logo-container"> 
-        <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" alt="logo" class="logo">
-    </div>-->
+    <div class="logo-container"> 
+        <img src="" alt="logo" class="logo" width="50px" height="auto">
+    </div>
 
 </header>
-    <br> 
+    <hr> 
 
     <main>
 
@@ -96,26 +95,8 @@
 
     <div class="banner" id="slideshow-banner">
     <div class="overlay">Silahkan menjelajahi website saya</div>
-</div>
+    </div>
 
-
-
-
-    <!--slideshow-tombol-->
-   <!---- <div class="slideshow-container">
-        <div class="mySlides">
-            <img src="https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/29904/ingame_4k.png" style="width: 100%;" alt="slide-1">
-        </div> 
-
-        <div class="mySlides">
-            <img src="https://wallpapers-clan.com/wp-content/uploads/2024/08/kirby-rainbow-sea-background-desktop-wallpaper-cover.jpg" style="width: 100%;" alt="slide-2">
-        </div>
-        <div class="mySlides">
-            <img src="https://images6.alphacoders.com/121/1216258.jpg" style="width: 100%" alt="slide-3">
-        </div>
-        <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
-        <a class="next" onclick="plusDivs(1)">&#10095;</a>
-    </div>-->
 
     <script>
         var slideIndex = 1;
@@ -137,27 +118,6 @@
             x[slideIndex - 1].style.display = "block";  
         }
     </script>
-
-<!--<div class="banner">
-    <img id="banner-image" src="https://picsum.photos/200/300?1" alt="banner-web">
-</div>
-        <script>let bannerImages = [
-            'https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/29904/ingame_4k.png',
-            'ttps://picsum.photos/200/300',
-            'https://images6.alphacoders.com/121/1216258.jpg'
-        ];
-    
-        let currentIndex = 0;
-        let bannerImageElement = document.getElementById('banner-image');
-    
-        function changeBannerImage() {
-            currentIndex = (currentIndex + 1) % bannerImages.length; // Loop melalui gambar
-            bannerImageElement.src = bannerImages[currentIndex]; // Mengubah src gambar
-        }
-    
-    
-        setInterval(changeBannerImage, 5000);
-        </script>-->
     
         <main>
         <section id="section-me">
@@ -188,6 +148,8 @@
 
     </main>
 
+    <div class="form-container">
+        <div style="margin-bottom: 15px; text-align: center;"
     <div class="message-container" style="display: flex; flex-direction: column; align-items: center;">
     <form id="form-isi" style="display: flex; flex-direction: column; align-items: center;">
     <div class="message-container">
@@ -197,6 +159,7 @@
         <div class="bubble">Nama harus diisi!!</div>
         
     </div>
+    <br>
   
 
     <div class="message-container">
@@ -207,15 +170,16 @@
     
    
     <!-- Bagian Jenis Kelamin -->
-    <div style="margin-bottom: 15px; text-align: center;">
-        <label><b>Jenis Kelamin</b> :</label>
-        <div style="display: inline-flex; justify-content: center; margin-top: 5px;">
-            <label for="Pria" style="margin-right: 10px;">Pria</label>
-            <input type="radio" id="Pria" name="jenis-kelamin" value="pria" style="margin-right: 10px;">
-            <label for="Wanita" style="margin-right: 10px;">Wanita</label>
-            <input type="radio" id="Wanita" name="jenis-kelamin" value="wanita">
-        </div>
-    </div>
+    <div class="form-gender">
+    <label for="jenis-kelamin"><b>Jenis Kelamin</b> :</label>
+    <select id="jenis-kelamin" name="jenis-kelamin" style="margin-left: 10px;">
+        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+        <option value="pria">Pria</option>
+        <option value="wanita">Wanita</option>
+    </select>
+    <div class="bubble" style="display: none;">Mohon diisi jika ingin memilih!</div> <!-- Pastikan ini ada -->
+</div>
+    
 
         
 
@@ -223,16 +187,26 @@
       <div class="comment-box" style="margin-top: 20px;">
             <h2>Kotak Pesan</h2>
             <textarea name="message" id="message" rows="5" placeholder="Tulis pesan kamu..." style="width: 100%;"></textarea>
+            <div class="bubble">tolong diisi!!</div>
        <br>
 
        <button type="submit">Kirim</button>
         </form>
     </div>
-
+    </div>
 <br>
 
 </div>
- 
+
+<div class="hasil">
+    <p>OUTPUT</p>
+    <p>Nama : <span id="sender-nama"></span></p>
+    <p>Tanggal Lahir : <span id="sender-tanggal-lahir"></span></p>
+    <p>Jenis Kelamin : <span id="sender-jenis-kelamin"></span></p>
+    <p>Pesan : <span id="sender-message"></span></p>
+</div>
+
+ <!--slideshow-tombol-->
 <div class="slideshow-container">
     <div class="mySlides">
         <img src="https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/29904/ingame_4k.png" style="width: 100%;" alt="slide-1">
@@ -249,8 +223,14 @@
 </div>
 <br>
 
-<footer>RevoU Fundemtal Course - made by Vansja 2024</footer>
 
+<footer style="
+    text-align: center;
+    /* margin-right: auto; */
+    margin: 0;
+    /* align-content: center; */
+    /* align-items: flex-end; */
+">RevoU Fundamental Course - made by Vansja 2024</footer>
 
 <button class="scroll-to-top" id="scrollToTopBtn">↑ Kembali ke Atas</button>
 
